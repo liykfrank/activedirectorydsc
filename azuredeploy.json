@@ -60,12 +60,18 @@
         "description": "Auto-generated token to access _artifactsLocation"
       },
       "defaultValue": ""
+    },
+    "vmSize": {
+      "type": "string",
+      "metadata": {
+        "description": "The vmszie "
+      }
     }
   },
   "variables": {
     "adPDCVMName": "adPDC",
     "adBDCVMName": "adBDC",
-    "adVMSize": "Standard_F4s_v2",
+    "adVMSize": "parameters('vmSize')",
     "imagePublisher": "MicrosoftWindowsServer",
     "imageOffer": "WindowsServer",
     "imageSKU": "2016-Datacenter",
