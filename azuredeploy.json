@@ -285,6 +285,43 @@
           }
         }
      ]
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-11-01",
+      "name": "UpdateVNetDNS1",
+      "dependsOn": [
+        "[resourceId('Microsoft.Compute/virtualMachines/extensions', variables('adPDCVMName'), 'CreateAdForest')]"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('vnetwithDNSTemplateUri')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "virtualNetworkName": {
+            "value": "[variables('virtualNetworkName')]"
+          },
+          "virtualNetworkAddressRange": {
+            "value": "[variables('virtualNetworkAddressRange')]"
+          },
+          "subnetName": {
+            "value": "[variables('adSubnetName')]"
+          },
+          "subnetRange": {
+            "value": "[variables('adSubnet')]"
+          },
+          "DNSServerAddress": {
+            "value": [
+              "[variables('ipAddress')[0]]"
+            ]
+          },
+          "location": {
+            "value": "[parameters('location')]"
+          }
+        }
+      }
     }
     
   
