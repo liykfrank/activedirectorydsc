@@ -71,7 +71,7 @@
   "variables": {
     "adPDCVMName": "adPDC",
     "adBDCVMName": "adBDC",
-    "adVMSize": "[parameters('vmSize')]",
+    "adVMSize": "Standard_F4s_v2",
     "imagePublisher": "MicrosoftWindowsServer",
     "imageOffer": "WindowsServer",
     "imageSKU": "2016-Datacenter",
