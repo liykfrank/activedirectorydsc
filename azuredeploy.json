@@ -314,7 +314,7 @@
           },
           "DNSServerAddress": {
             "value": [
-              "[variables('ipAddress')[0]]"
+              "[variables('adPDCNicIPAddress')]"
             ]
           },
           "location": {
